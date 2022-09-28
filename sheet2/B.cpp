@@ -24,7 +24,7 @@ int main() {
         if (m[name] > 1 )
             cout << name << m[name]-1 << line;
         else
-            cout << "Ok" << line;
+            cout << "OK" << line;
     }
 
 }
