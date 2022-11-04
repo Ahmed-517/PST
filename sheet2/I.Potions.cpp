@@ -1,32 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define ll long long
+
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
 
     int n; cin >> n;
+    int a[n+2];
 
-    vector<int> v;
+    for (int i=0; i<n; i++) cin >> a[i];
 
-    int num;
-    while (n--) {
-        cin >> num;
-        v.push_back(num);
-    }
+    ll sum = 0;
+    int cnt = 0;
+    priority_queue<int, vector<int>, greater<>>pq;
 
-    int sum = 0;
-    int health = 0;
-    int count = 0;
-    for (auto i : v) {
-        sum+=i;
-        if (sum < 0) continue;
-        else {
-            health+=i;
-            sum = health;
-            count++;
+    for (int i = 0; i < n; i++) {
+        sum+=a[i];
+        if(a[i] < 0) pq.push(a[i]);
+
+        if (sum < 0) {
+            sum -= pq.top();
+            pq.pop();
+            cnt++;
         }
     }
+    cout << n - cnt << '\n';
 
-    cout << count;
-
+    return 0;
 }

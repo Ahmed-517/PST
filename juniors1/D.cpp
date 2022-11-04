@@ -8,8 +8,8 @@ int main() {
     string num;
     cin >> num;
 
-    for (int i=0; i<num.size(); i++) {
-        if (num[i] == '4' || num[i] == '7') lCount++;
+    for (char i : num) {
+        if (i == '4' || i == '7') lCount++;
     }
 
     if (lCount == 7 || lCount == 4) cout << "YES";
