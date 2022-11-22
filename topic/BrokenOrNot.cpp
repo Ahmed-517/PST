@@ -13,19 +13,9 @@ void go() {
 
     int st = 1, en = n, mid, ans = -1, iter = 0;
     while (st <= en) {
-        iter++;
         mid = (st + en) / 2;
-
-        if (a[mid] == x) {
-            ans = 1;
-            break;
-        } else if (a[mid] > x) {
-                en = mid - 1;
-        } else {
-            st = mid + 1;
-        }
-
     }
+
     cout << iter << line;
     if (ans == -1) cout << "Not Found" << line;
     else cout << ans << line;

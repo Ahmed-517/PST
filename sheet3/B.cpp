@@ -1,10 +1,19 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    int x; cin >> x;
+// Again Twenty Five!
 
-    cout << (x*(x+1))/2 << endl;
+int main() {
+    long long x; cin >> x;
+
+    if (x%2 == 0) {
+        cout << x / 2 << endl;
+        return 0;
+    } else {
+        x = x / 2;
+        cout << -(x+1) << endl;
+        return 0;
+    }
 
     return 0;
 }
